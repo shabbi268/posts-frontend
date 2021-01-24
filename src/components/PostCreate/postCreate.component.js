@@ -88,7 +88,7 @@ export default class PostsCreate extends Component {
                 </div>
         
                 <div className="form-group">
-                    <button data-testid="createPost" type="submit" label="Create New Post" className="btn btn-primary">Create New Post</button>
+                    <button id="button" data-testid="createPost" type="submit" label="Create New Post" className="btn btn-primary">Create Post</button>
                 </div>
                 </form>
             </div>
