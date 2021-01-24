@@ -56,8 +56,8 @@ export default class PostsCreate extends Component {
     render() {
         return (
             <div>
-            <h3>Create New Post</h3>
-            <form onSubmit={this.onSubmit}>
+            <h3 style={{ paddingLeft: '35px' }}>Create New Post</h3>
+            <form onSubmit={this.onSubmit} style={{ paddingTop: '30px', paddingLeft: '35px', paddingRight: '35px' }}>
                 <div className="form-group"> 
                     <label>Title: </label>
                     <input  type="text"

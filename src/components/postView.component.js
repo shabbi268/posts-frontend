@@ -31,21 +31,21 @@ export default class PostsView extends Component {
     render() {
         return (
         <div>
-            This is Post View Component.
-            <form>
-                <div className="form-group"> 
-                    <label>Title: </label>
-                    <p>{this.state.title}</p>
+            <h3>Post View</h3>
+            <div className="container" style={{ paddingTop: '30px', paddingLeft: '35px', paddingRight: '35px' }}>
+                <div> 
+                    <h4>Title: </h4>
+                    <h5>{this.state.title}</h5>
                 </div>
-                <div className="form-group"> 
-                    <label>Description: </label>
-                    <p>{this.state.description}</p>
+                <div> 
+                    <h4>Description: </h4>
+                    <h5>{this.state.description}</h5>
                 </div>
-                <div className="form-group">
-                    <label>Date: </label>
-                    <p>{new Date(this.state.date).toLocaleString()}</p>
+                <div>
+                    <h4>Date: </h4>
+                    <h5>{new Date(this.state.date).toLocaleString()}</h5>
                 </div>
-                </form>
+                </div>
         </div>
         )
     }

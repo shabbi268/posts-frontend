@@ -5,6 +5,7 @@ import PostsList from './components/postsList.component';
 import EditPost from './components/postEdit.component';
 import CreatePost from './components/postCreate.component';
 import ViewPost from './components/postView.component';
+import Welcome from './components/welcome.component';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <div className="container">
           <Navbar />
           <br/>
-          <Route path="/" exact component={PostsList} />
+          <Route path="/" exact component={Welcome} />
+          <Route path="/posts" exact component={PostsList} />
           <Route path="/edit/:id" component={EditPost} />
           <Route path="/create" component={CreatePost} />
           <Route path="/view/:id" component={ViewPost} />
