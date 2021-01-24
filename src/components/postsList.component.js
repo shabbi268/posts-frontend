@@ -11,7 +11,7 @@ const PostSchema = props => (
     <td>{props.post.description}</td>
     <td>{props.post.date}</td>
     <td>
-    {/* <Link to={"/edit/"+props.exercise._id}>edit</Link> | <a href="#" onClick={() => { props.deletePost(props.post._id) }}>Delete Post</a> */}
+    <Link to={"/edit/"+props.post._id}>Edit</Link> | <a href="#" onClick={() => { props.deletePost(props.post._id) }}>Delete</a>
     </td>
 </tr>
 )
@@ -20,7 +20,7 @@ export default class PostsList extends Component {
     constructor(props) {
         super(props)
         //Binding the "this" to the function
-        // this.deletePost = this.deletePost.bind(this)
+        this.deletePost = this.deletePost.bind(this)
 
         this.state = {
             posts: []
@@ -40,11 +40,41 @@ export default class PostsList extends Component {
             })
     }
 
+    deletePost(id) {
+        axios.delete(process.env.REACT_APP_API_URL + id)
+            .then(response => {
+                console.log(response.data)
+            });
+    
+            this.setState({
+            posts: this.state.posts.filter(post => post._id !== id)
+            })
+        }
+    
+    displayPostList() {
+    return this.state.posts.map(post => {
+        return <PostSchema post={post} deletePost={this.deletePost} key={post._id}/>;
+    })
+    }
+
     render() {
         return (
-        <div>
-            This is Posts List Component.
-        </div>
+            <div>
+            <h3>Posts List</h3>
+                <table className="table">
+                    <thead className="thead-light">
+                        <tr>
+                        <th>Username</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        { this.displayPostList() }
+                    </tbody>
+                </table>
+            </div>
         )
     }
 }
