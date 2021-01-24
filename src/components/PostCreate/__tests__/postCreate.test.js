@@ -25,7 +25,7 @@ it('renders the save button correctly', () => {
 });
 
 // other way of testing the element's textContent
-it('renders h1 tag correctly', () => {
+it('renders h3 tag correctly', () => {
     const div = document.createElement('div');
     ReactDOM.render(<PostsCreate></PostsCreate>, div);
     // expect(div.querySelector('h3') === 'Create New Post');

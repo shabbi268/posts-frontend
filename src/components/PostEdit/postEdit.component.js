@@ -102,7 +102,7 @@ export default class PostsEdit extends Component {
                 </div>
         
                 <div className="form-group">
-                    <input type="submit" value="Save" className="btn btn-success form-control" />
+                    <input data-testid="edit" type="submit" value="Save" className="btn btn-success form-control" />
                     <input type="cancel" defaultValue="Cancel" onClick={this.cancelClicked} className="btn btn-danger form-control" />
                 </div>
                 </form>
