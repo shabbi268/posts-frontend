@@ -50,7 +50,7 @@ export default class PostsCreate extends Component {
 
         axios.post(process.env.REACT_APP_API_URL + `/posts/add`, post)
             .then(res => console.log(res.data))
-        // window.location = '/';
+        window.location = '/';
     }
 
     render() {
@@ -58,39 +58,39 @@ export default class PostsCreate extends Component {
             <div>
             <h3>Create New Post</h3>
             <form onSubmit={this.onSubmit}>
-              <div className="form-group"> 
-                <label>Title: </label>
-                <input  type="text"
-                    required
-                    className="form-control"
-                    value={this.state.title}
-                    onChange={this.onChangeTitle}
-                    />
-              </div>
-              <div className="form-group"> 
-                <label>Description: </label>
-                <input  type="text"
-                    required
-                    className="form-control"
-                    value={this.state.description}
-                    onChange={this.onChangeDescription}
-                    />
-              </div>
-              <div className="form-group">
-                <label>Date: </label>
-                <div>
-                  <DatePicker
-                    selected={this.state.date}
-                    onChange={this.onChangeDate}
-                  />
+                <div className="form-group"> 
+                    <label>Title: </label>
+                    <input  type="text"
+                        required
+                        className="form-control"
+                        value={this.state.title}
+                        onChange={this.onChangeTitle}
+                        />
                 </div>
-              </div>
-      
-              <div className="form-group">
-                <input type="submit" value="Create New Post" className="btn btn-primary" />
-              </div>
-            </form>
-          </div>
+                <div className="form-group"> 
+                    <label>Description: </label>
+                    <input  type="text"
+                        required
+                        className="form-control"
+                        value={this.state.description}
+                        onChange={this.onChangeDescription}
+                        />
+                </div>
+                <div className="form-group">
+                    <label>Date: </label>
+                    <div>
+                    <DatePicker
+                        selected={this.state.date}
+                        onChange={this.onChangeDate}
+                    />
+                    </div>
+                </div>
+        
+                <div className="form-group">
+                    <input type="submit" value="Create New Post" className="btn btn-primary" />
+                </div>
+                </form>
+            </div>
         )
     }
 }

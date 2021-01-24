@@ -11,7 +11,7 @@ const PostSchema = props => (
     <td>{props.post.description}</td>
     <td>{props.post.date}</td>
     <td>
-    <Link to={"/edit/"+props.post._id}>Edit</Link> | <a href="#" onClick={() => { props.deletePost(props.post._id) }}>Delete</a>
+    <Link to={"/view/"+props.post._id}>View</Link> | <Link to={"/edit/"+props.post._id}>Edit</Link> | <a href="#" onClick={() => { props.deletePost(props.post._id) }}>Delete</a>
     </td>
 </tr>
 )
