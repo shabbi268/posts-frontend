@@ -5,6 +5,12 @@ import "react-datepicker/dist/react-datepicker.css";
 export default class PostsCreate extends Component {
     constructor(props) {
         super(props);
+
+        //binding the functions with the "this" so that functions know what this its referring to.
+        this.onChangeTitle = this.onChangeTitle.bind(this);
+        this.onChangeDescription = this.onChangeDescription.bind(this);
+        this.onChangeDate = this.onChangeDate.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
         
         this.state = {
             title: "",
@@ -38,6 +44,7 @@ export default class PostsCreate extends Component {
             date: this.state.date
         }
         console.log(`post: `,post);
+        window.location = '/';
     }
 
     render() {
