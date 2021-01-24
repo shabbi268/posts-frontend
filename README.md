@@ -1,3 +1,11 @@
+# This is the front end part of the Posts App where users can CREATE/UPDATE/DELETE/VIEW the posts.
+I used React JS for rendering the contents into the DOM
+Used Axios to generate basic CRUD Http requests to access the [API Backend](https://github.com/shabbi268/posts-backend).
+
+the .env file has the API URL where the API will be running.
+
+Please find below steps to start the project in your local environment.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
