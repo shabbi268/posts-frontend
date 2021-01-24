@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from './components/navbar.component';
-import PostsList from './components/postsList.component';
-import EditPost from './components/postEdit.component';
-import CreatePost from './components/postCreate.component';
-import ViewPost from './components/postView.component';
-import Welcome from './components/welcome.component';
+import Navbar from './components/Navbar/navbar.component';
+import PostsList from './components/PostsList/postsList.component';
+import EditPost from './components/PostEdit/postEdit.component';
+import CreatePost from './components/PostCreate/postCreate.component';
+import ViewPost from './components/PostView/postView.component';
+import Welcome from './components/Welcome/welcome.component';
 
 function App() {
   return (

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './postView.css';
 require('dotenv').config();
 
 export default class PostsView extends Component {
@@ -32,7 +33,7 @@ export default class PostsView extends Component {
         return (
         <div>
             <h3>Post View</h3>
-            <div className="container" style={{ paddingTop: '30px', paddingLeft: '35px', paddingRight: '35px' }}>
+            <div className="container">
                 <div style={{ justifyContent: 'center', position: 'fixed' }}>
                     <p>Title: </p>
                     <h5>{this.state.title}</h5>

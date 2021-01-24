@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
+import './postCreate.css';
 require('dotenv').config();
 
 export default class PostsCreate extends Component {
@@ -56,8 +57,8 @@ export default class PostsCreate extends Component {
     render() {
         return (
             <div>
-            <h3 style={{ paddingLeft: '35px' }}>Create New Post</h3>
-            <form onSubmit={this.onSubmit} style={{ paddingTop: '30px', paddingLeft: '35px', paddingRight: '35px' }}>
+            <h3 className='h3'>Create New Post</h3>
+            <form onSubmit={this.onSubmit} className='form'>
                 <div className="form-group"> 
                     <label>Title: </label>
                     <input  type="text"
