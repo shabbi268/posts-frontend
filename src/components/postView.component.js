@@ -43,7 +43,7 @@ export default class PostsView extends Component {
                 </div>
                 <div className="form-group">
                     <label>Date: </label>
-                    <p>{new Date(this.state.date)}</p>
+                    <p>{new Date(this.state.date).toLocaleString()}</p>
                 </div>
                 </form>
         </div>
