@@ -23,6 +23,7 @@ export default class PostsList extends Component {
         this.deletePost = this.deletePost.bind(this)
 
         this.state = {
+            loading: true,
             posts: []
         };
     }
@@ -32,10 +33,15 @@ export default class PostsList extends Component {
             .then(response => {
                 console.log(`posts: `,response.data)
                 this.setState({
-                    posts: response.data
+                    posts: response.data,
+                    loading: false
                 })
             })
             .catch((error) => {
+                this.setState({
+                    loading: true,
+                    posts: []
+                })
                 console.log(`error: `,error)
             })
     }
@@ -61,19 +67,23 @@ export default class PostsList extends Component {
         return (
             <div>
             <h3>Posts List</h3>
-                <table className="table">
-                    <thead className="thead-light">
-                        <tr>
-                        <th>Username</th>
-                        <th>Description</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { this.displayPostList() }
-                    </tbody>
-                </table>
+                {
+                    this.state.loading ? 
+                        <div></div> :
+                        <table className="table">
+                        <thead className="thead-light">
+                            <tr>
+                            <th>Username</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            { this.displayPostList() }
+                        </tbody>
+                        </table>
+                }
             </div>
         )
     }
