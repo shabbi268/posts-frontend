@@ -49,7 +49,7 @@ export default class PostsEdit extends Component {
         })
     };
     cancelClicked() {
-        window.location = ('/');
+        window.location = ('/posts');
     }
 
     onSubmit(e) {
