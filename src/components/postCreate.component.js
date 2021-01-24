@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import axios from 'axios';
+require('dotenv').config();
 
 export default class PostsCreate extends Component {
     constructor(props) {
@@ -44,7 +46,11 @@ export default class PostsCreate extends Component {
             date: this.state.date
         }
         console.log(`post: `,post);
-        window.location = '/';
+        console.log(`process.env.REACT_APP_API_URL: `,process.env.REACT_APP_API_URL);
+
+        axios.post(process.env.REACT_APP_API_URL + `/posts/add`, post)
+            .then(res => console.log(res.data))
+        // window.location = '/';
     }
 
     render() {
