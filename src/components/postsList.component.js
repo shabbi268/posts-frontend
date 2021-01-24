@@ -9,7 +9,7 @@ const PostSchema = props => (
 <tr>
     <td>{props.post.title}</td>
     <td>{props.post.description}</td>
-    <td>{props.post.date}</td>
+    <td>{(props.post.date).toLocaleString()}</td>
     <td>
     <Link to={"/view/"+props.post._id}>View</Link> | <Link to={"/edit/"+props.post._id}>Edit</Link> | <a href="#" onClick={() => { props.deletePost(props.post._id) }}>Delete</a>
     </td>

@@ -33,19 +33,15 @@ export default class PostsView extends Component {
         <div>
             <h3>Post View</h3>
             <div className="container" style={{ paddingTop: '30px', paddingLeft: '35px', paddingRight: '35px' }}>
-                <div> 
-                    <h4>Title: </h4>
+                <div style={{ justifyContent: 'center', position: 'fixed' }}>
+                    <p>Title: </p>
                     <h5>{this.state.title}</h5>
-                </div>
-                <div> 
-                    <h4>Description: </h4>
+                    <p>Description: </p>
                     <h5>{this.state.description}</h5>
+                    <p>Date: </p>
+                    <h6>{new Date(this.state.date).toLocaleString()}</h6>
                 </div>
-                <div>
-                    <h4>Date: </h4>
-                    <h5>{new Date(this.state.date).toLocaleString()}</h5>
-                </div>
-                </div>
+            </div>
         </div>
         )
     }
