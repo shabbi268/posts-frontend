@@ -50,7 +50,7 @@ export default class PostsCreate extends Component {
 
         axios.post(process.env.REACT_APP_API_URL + `/posts/add`, post)
             .then(res => console.log(res.data))
-        // window.location = '/posts';
+        window.location = '/posts';
     }
 
     render() {
