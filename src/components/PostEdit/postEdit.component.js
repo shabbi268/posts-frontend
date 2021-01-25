@@ -60,8 +60,6 @@ export default class PostsEdit extends Component {
             description: this.state.description,
             date: this.state.date
         }
-        console.log(`post: `,post);
-        console.log(`process.env.REACT_APP_API_URL: `,process.env.REACT_APP_API_URL);
 
         axios.post(process.env.REACT_APP_API_URL + `/posts/update/` + this.props.match.params.id, post)
             .then(res => console.log(res.data))

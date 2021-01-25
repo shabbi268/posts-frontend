@@ -14,10 +14,8 @@ export default class PostsView extends Component {
         }
     }
     componentDidMount() {
-        console.log(`this.props.match.params._id: `,this.props.match.params.id);
         axios.get(process.env.REACT_APP_API_URL + `/posts/` + this.props.match.params.id)
             .then(response => {
-                console.log(`VIEW posts: `,response.data)
                 this.setState({
                     title: response.data.title,
                     description: response.data.description,

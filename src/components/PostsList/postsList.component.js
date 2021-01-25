@@ -9,7 +9,7 @@ const PostSchema = props => (
 <tr>
     <td>{props.post.title}</td>
     <td>{props.post.description}</td>
-    <td>{(props.post.date).toLocaleString()}</td>
+    <td>{(props.post.date).toLocaleString().split('T')[0]}</td>
     <td>
     <Link to={"/view/"+props.post._id}>View</Link> | <Link to={"/edit/"+props.post._id}>Edit</Link> | <a href="#" onClick={() => { props.deletePost(props.post._id) }}>Delete</a>
     </td>
@@ -31,7 +31,6 @@ export default class PostsList extends Component {
     componentDidMount() {
         axios.get(process.env.REACT_APP_API_URL + `/posts`)
             .then(response => {
-                console.log(`posts: `,response.data)
                 this.setState({
                     posts: response.data,
                     loading: false
@@ -42,12 +41,11 @@ export default class PostsList extends Component {
                     loading: true,
                     posts: []
                 })
-                console.log(`error: `,error)
             })
     }
 
     deletePost(id) {
-        axios.delete(process.env.REACT_APP_API_URL + id)
+        axios.delete(process.env.REACT_APP_API_URL + '/posts/' + id)
             .then(response => {
                 console.log(response.data)
             });
@@ -75,7 +73,7 @@ export default class PostsList extends Component {
                             <tr>
                             <th>Username</th>
                             <th>Description</th>
-                            <th>Date</th>
+                            <th>Created At</th>
                             <th>Actions</th>
                             </tr>
                         </thead>
