@@ -38,7 +38,7 @@ export default class PostsView extends Component {
                     <p>Description: </p>
                     <h5>{this.state.description}</h5>
                     <p>Date: </p>
-                    <h6>{new Date(this.state.date).toLocaleString()}</h6>
+                    <h6>{new Date(this.state.date).toLocaleString().split('T')[0]}</h6>
                 </div>
             </div>
         </div>
