@@ -1,4 +1,5 @@
-# This is the front end part of the Posts App where users can CREATE/UPDATE/DELETE/VIEW the posts.
+# Posts web app using REACT JS
+## This is the front end part of the Posts App where users can CREATE/UPDATE/DELETE/VIEW the posts.
 I used React JS for rendering the contents into the DOM
 Used Axios to generate basic CRUD Http requests to access the [API Backend](https://github.com/shabbi268/posts-backend).
 
